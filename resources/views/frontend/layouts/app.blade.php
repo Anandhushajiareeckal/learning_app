@@ -20,7 +20,7 @@
 
     <meta name="description" content="{{ $defaultMeta['meta_description'] }}">
     <meta name="keywords" content="{{ $defaultMeta['meta_keyword'] }}">
-    
+
     <!-- Open Graph meta tags for social sharing -->
     <meta property="og:type" content="Learning">
     <meta property="og:title" content="{{ $defaultMeta['meta_title'] }}">
@@ -29,13 +29,13 @@
     <meta property="og:url" content="{{ url()->current() }}">
 
     <meta property="og:site_name" content="{{ get_option('app_name') }}">
-    
+
     <!-- Twitter Card meta tags for Twitter sharing -->
     <meta name="twitter:card" content="Learning">
     <meta name="twitter:title" content="{{ $defaultMeta['meta_title'] }}">
     <meta name="twitter:description" content="{{ $defaultMeta['meta_description'] }}">
     <meta name="twitter:image" content="{{ $defaultMeta['og_image'] }}">
-    @endif  
+    @endif
 
     <title>{{ get_option('app_name') }} - {{ __(@$pageTitle) }}</title>
 
@@ -80,7 +80,7 @@
     <link href="{{ asset('frontend/assets/css/style.css') }}" rel="stylesheet">
 
     @stack('theme-style')
-    
+
     <link href="{{ asset('frontend/assets/css/extra.css') }}" rel="stylesheet">
 
     <!-- Responsive Css-->
@@ -111,7 +111,7 @@
     @toastr_css
     @include(getThemePath().'.layouts.dynamic-style')
 
-    
+
     @if(get_option('pwa_enable'))
     <!-- PWA  -->
     <meta name="theme-color" content="{{ empty(get_option('app_theme_color')) ? '#5e3fd7' : get_option('app_theme_color') }}"/>
@@ -257,7 +257,7 @@
 <script src="{{asset('frontend/assets/vendor/datatable/datatables-buttons/js/buttons.html5.min.js')}}"></script>
 <script src="{{asset('frontend/assets/vendor/datatable/datatables-buttons/js/buttons.print.min.js')}}"></script>
 <script src="{{asset('frontend/assets/vendor/datatable/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
-   
+
 @if(isEnableOpenAI())
 <script src="{{asset('addon/AI/js/main.js')}}"></script>
 @endif

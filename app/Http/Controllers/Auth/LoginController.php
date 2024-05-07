@@ -105,7 +105,7 @@ class LoginController extends Controller
                 return redirect("login");
             }
 
-            if (Auth::user()->role == USER_ROLE_INSTRUCTOR && Auth::user()->student->status == STATUS_REJECTED && Auth::user()->instructor->status == STATUS_REJECTED){
+            if (Auth::user()->role == USER_ROLE_INSTRUCTOR && Auth::user()->instructor->status == STATUS_REJECTED){
                 Auth::logout();
                 $this->showToastrMessage('error', __('Your account has been blocked!'));
                 return redirect("login");

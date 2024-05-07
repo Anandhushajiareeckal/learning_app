@@ -291,7 +291,7 @@ function get_student_score($exam_id)
 function get_student_by_student_score($exam_id, $user_id)
 {
     $exam = \App\Models\Exam::find($exam_id);
-    $number_of_correct_answer = \App\Models\Answer::whereUserId(auth()->user()->id)->whereExamId($exam_id)->whereIsCorrect('yes')->count();
+    $number_of_correct_answer = \App\Models\Answer::whereUserId($user_id)->whereExamId($exam_id)->whereIsCorrect('yes')->count();
     return $exam->marks_per_question * $number_of_correct_answer;
 }
 

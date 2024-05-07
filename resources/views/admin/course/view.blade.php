@@ -421,6 +421,7 @@
                                 <th>{{__('Title')}}</th>
                                 <th>{{__('Expired at')}}</th>
                                 <th>{{__('Validity')}}</th>
+                                <th>{{__('In Days')}}</th>
                                 <th>{{__('Status')}}</th>
                             </tr>
                             </thead>
@@ -438,6 +439,9 @@
                                     </td>
                                     <td class="font-15 color-heading">
                                         {{ (checkIfExpired($studentEnrollment)) ? (checkIfLifetime($studentEnrollment->end_date) ? __('Lifetime') : \Carbon\Carbon::now()->diffForHumans( \Carbon\Carbon::parse($studentEnrollment->end_date), true).' '.__(' left') ) : __('Expired') }}
+                                    </td>
+                                    <td class="font-15 color-heading">
+                                        {{ max(0,floor((strtotime($studentEnrollment->end_date) - time())/ (60 * 60 * 24)))}}
                                     </td>
                                     <td>
                                         <span id="hidden_id" style="display: none">{{$studentEnrollment->id}}</span>

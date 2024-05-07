@@ -45,7 +45,7 @@ class ExamController extends Controller
         $scholarship->description = request("description");
         $scholarship->save();
         return redirect('/admin/scholarships');
-    
+
     }
     public function scholarship_edit(string $id){
         $scholarship =  scholarship::find($id);
@@ -93,11 +93,11 @@ class ExamController extends Controller
     public function scholarships_exams(string $id){
         $time = null;
         $exam_times = Exam_time::all();
-        
+
         foreach ($exam_times as $item) {
             if ($item->scho_id == $id) {
                 $time = $item;
-                break; 
+                break;
             }
         }
         $scholarships_exams = scholarship_exam::where('scho_id',  $id)->get();
@@ -168,39 +168,39 @@ class ExamController extends Controller
         return back();
     }
 
-    public function get_scholarship_list(Request $request) {  
+    public function get_scholarship_list(Request $request) {
 
-        $scholarships = scholarship::all(); 
+        $scholarships = scholarship::all();
         return view('admin.exams.scholarship.result',['scholarship'=>$scholarships ]);
     }
 
-    public function results(Request $request) {  
+    public function results(Request $request) {
         $exm_res = scholarship_attend::with('user','user.results')->where('scholarship', $request->id)->get();
         Log::info($exm_res);
-        return view('admin.exams.scholarship.exam_result',['exm_res'=>$exm_res ]);   
+        return view('admin.exams.scholarship.exam_result',['exm_res'=>$exm_res ]);
     }
 
-    public function exam_details(Request $request) {  
-        $exm_res = User::with('results')->where('id', $request->id)->get(); 
+    public function exam_details(Request $request) {
+        $exm_res = User::with('results')->where('id', $request->id)->get();
         Log::info($exm_res);
-        return view('admin.exams.scholarship.exm_res_detail',['exm_res'=>$exm_res ]);   
+        return view('admin.exams.scholarship.exm_res_detail',['exm_res'=>$exm_res ]);
     }
 
-    public function rank_calculation(Request $request) {  
+    public function rank_calculation(Request $request) {
 
-        $scholarships = scholarship::all(); 
+        $scholarships = scholarship::all();
         return view('admin.exams.scholarship.rank_calc',['scholarship'=>$scholarships ]);
     }
 
-    public function rank_calculate(Request $request) {   
-        
+    public function rank_calculate(Request $request) {
+
         Rank_list::where('scholarship_id', $request->id)->delete();
         $exm_res = scholarship_attend::with('user','user.results')->where('scholarship', $request->id)->get();
         // dd($exm_res->user->results );
 
 
-        foreach($exm_res as $key =>  $res) { 
-           
+        foreach($exm_res as $key =>  $res) {
+
             $name           = $res->user->name;
             $wrong_answer   = 0;
             $correct_answer = 0;
@@ -211,15 +211,15 @@ class ExamController extends Controller
           foreach($res->user->results as $row ) {
             if($row->result == 0)
                 $wrong_answer = $wrong_answer +1;
-            else 
+            else
                 $correct_answer = $correct_answer +1;
             }
 
             $total_marks = $correct_answer;
-            $negative_mark =  intdiv($wrong_answer, $divisor); 
+            $negative_mark =  intdiv($wrong_answer, $divisor);
 
-            $actual_marks =  $total_marks - $negative_mark;          
-          
+            $actual_marks =  $total_marks - $negative_mark;
+
             // echo $name.  "--name <br>"           ;
             // echo $wrong_answer.  "--wrong_answer <br>"   ;
             // echo $correct_answer.  "--correct_answer <br>" ;
@@ -237,24 +237,24 @@ class ExamController extends Controller
             $rank_list->negative_mark   =  $negative_mark;
             $rank_list->actual_marks    =  $actual_marks;
             $rank_list->save();
-           
+
         }
 
 
         return redirect()->route('admin.rank_calculation');
- 
-        // return view('admin.rank_list',['exm_res'=>$exm_res ]);   
+
+        // return view('admin.rank_list',['exm_res'=>$exm_res ]);
     }
 
     public function view_rank_list(Request $request) {
 
-        $exm_res = Rank_list::where('scholarship_id', $request->id)->orderByRaw('CONVERT(actual_marks, SIGNED) desc')->get(); 
+        $exm_res = Rank_list::where('scholarship_id', $request->id)->orderByRaw('CONVERT(actual_marks, SIGNED) desc')->get();
         $scholarship_details = scholarship::where('id', $request->id)->first();
         // foreach($exm_res as $row) {
         //     echo $row->name. "--".$row->actual_marks."<br>";
-        // } 
+        // }
         // dd();
-        return view('admin.exams.scholarship.rank_list',['exm_res'=>$exm_res,'scholarship_details' =>$scholarship_details ]);   
+        return view('admin.exams.scholarship.rank_list',['exm_res'=>$exm_res,'scholarship_details' =>$scholarship_details ]);
 
     }
 
@@ -331,11 +331,11 @@ class ExamController extends Controller
     public function quiz_exams(string $id) {
         $time = null;
         $exam_times = Exam_time::all();
-        
+
         foreach ($exam_times as $item) {
             if ($item->scho_id == $id) {
                 $time = $item;
-                break; 
+                break;
             }
         }
         $scholarships_exams = quizs::where('scho_id',  $id)->get();
@@ -459,11 +459,11 @@ class ExamController extends Controller
     public function mock_exams(string $id) {
         $time = null;
         $exam_times = Exam_time::all();
-        
+
         foreach ($exam_times as $item) {
             if ($item->scho_id == $id) {
                 $time = $item;
-                break; 
+                break;
             }
         }
         $scholarships_exams = mock::where('scho_id',  $id)->get();

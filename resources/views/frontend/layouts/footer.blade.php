@@ -33,7 +33,7 @@
                                 @endif
                                 @if (get_option('tiktok_url'))
                                     <li><a href="{{ get_option('tiktok_url') }}"><span class="iconify"
-                                                data-icon="iconoir:tiktok" data-width="1em"
+                                                data-icon="iconoir:youtube" data-width="1em"
                                                 data-height="1em"></span></a></li>
                                 @endif
                             </ul>

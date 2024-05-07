@@ -193,7 +193,7 @@ class MyCourseController extends Controller
                 $q->whereTime(DB::raw('SEC_TO_TIME((duration*60) + TIME_TO_SEC(time))'), '>=', now());
             })
             ->latest()->get();
-    
+
         $data['past_live_classes'] = LiveClass::whereCourseId($data['course']->id)->where(function($q){
                 $q->whereDate('date', now());
                 $q->whereTime(DB::raw('SEC_TO_TIME((duration*60) + TIME_TO_SEC(time))'), '<', now());
@@ -202,7 +202,7 @@ class MyCourseController extends Controller
                 $q->whereDate('date', '<', now());
             })
             ->latest()->get();
-            
+
         //End:: Live Class
 
         //Start:: Review
@@ -610,7 +610,7 @@ class MyCourseController extends Controller
         }
         /** ------- end save certificate ----------- */
     }
-    
+
     public function saveCertificate(Request $request)
     {
         /** === make pdf certificate ===== */
@@ -621,7 +621,7 @@ class MyCourseController extends Controller
                 $certificate = Certificate::find($certificate_by_instructor->certificate_id);
                 if ($certificate) {
                     $certificate_name = 'certificate-' . $course->uuid . '.png';
-                    
+
                     $certificateFile = $request->file;  // your base64 encoded
                     $certificateFile = str_replace('data:image/png;base64,', '', $certificateFile);
                     $certificateFile = str_replace(' ', '+', $certificateFile);
@@ -659,7 +659,7 @@ class MyCourseController extends Controller
             $course_lecture_views->save();
         }
 
-        
+
         $data = [
             'success' => 'success'
         ];
@@ -702,7 +702,7 @@ class MyCourseController extends Controller
             return redirect()->back();
         }
     }
-    
+
     public function refundRequest(Request $request)
     {
         $enrollment = Enrollment::where('enrollments.status', STATUS_ACCEPTED)
@@ -715,9 +715,9 @@ class MyCourseController extends Controller
         if(is_null($enrollment)){
             return response()->json(['status' => false, 'message' => 'Order not found'], 404);
         }
-        
+
         $exist = Refund::where('order_item_id', $enrollment->order_item_id)->whereIn('status', [STATUS_ACCEPTED, STATUS_PENDING])->first();
-        
+
         if(!is_null($exist)){
             return response()->json(['status' => true, 'message' => 'Already in Refund request'], 200);
         }

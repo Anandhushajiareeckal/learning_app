@@ -8,7 +8,7 @@
                 <div class="col-md-5">
                     <div class="sign-up-left-content">
                         <div class="sign-up-top-logo">
-                            <a href="{{ route('main.index') }}"><img src="{{getImageFile(get_option('app_logo'))}}" alt="logo"></a>
+                            <a href="{{ route('main.index') }}"><img src="{{getImageFile(get_option('app_logo'))}}" alt="logo" style="width: 100%;"></a>
                         </div>
                         <p>{{ __(get_option('sign_up_left_text')) }}</p>
                         @if(get_option('sign_up_left_image'))

@@ -208,7 +208,7 @@ class InstructorController extends Controller
             'postal_code' => $request->postal_code,
         ];
 
-        $this->studentModel->create($student_data);
+        // $this->studentModel->create($student_data); // comment by Ananthu bcz the instructor is also show in stundents 
 
         if (Instructor::where('slug', getSlug($user->name))->count() > 0)
         {

@@ -2,10 +2,10 @@
 @section('content')
 <div class>
     <header class="page-banner-header gradient-bg position-relative">
-        <div class="section-overlay">
+        <div class="section-overlay" style="padding: 140px 0 136px !important;">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-md-7">
+                    {{-- <div class="col-12 col-md-7">
                         <!-- <div class="page-banner-content forum-banner-content">
                             <h3 class="page-banner-heading text-white pb-15">Forum</h3>
                             <div class="forum-banner-search-ask-wrap d-flex align-items-center">
@@ -26,10 +26,10 @@
                                 <a href="forum/ask-a-question.html" class="theme-button1">Ask a Question</a>
                             </div>
                         </div> -->
-                    </div>
-                    <div class="col-md-5">
-                        <div class="forum-banner-right-img">
-                            <img src="frontend/assets/img/forum-banner-right-img.png" alt="lmszai forum"
+                    </div> --}}
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <div class="forum-banner-center-img w-25 " >
+                            <img src="{{ getImageFile(get_option('app_logo')) }}" alt="lmszai forum"
                                 class="img-fluid">
                         </div>
                     </div>
@@ -66,16 +66,16 @@
                 @endforeach
 
 
-                
 
 
-                
 
 
-               
 
 
-                
+
+
+
+
 
             </div>
         </div>

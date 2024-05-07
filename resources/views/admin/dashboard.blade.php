@@ -25,274 +25,314 @@
             <div class="row">
 
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="status__box status__box__v3 bg-style">
-                        <div class="status__box__img">
-                            <img src="{{ asset('admin') }}/images/admin-dashboard-icons/principal.png" alt="icon">
+                    <a href="/admin/user">
+                        <div class="status__box status__box__v3 bg-style">
+                            <div class="status__box__img">
+                                <img src="{{ asset('admin') }}/images/admin-dashboard-icons/principal.png" alt="icon">
+                            </div>
+                            <div class="status__box__text">
+                                <h2 class="color-purple">{{ $total_admins }}</h2>
+                                <h3>{{ __('Total Admin') }}</h3>
+                            </div>
                         </div>
-                        <div class="status__box__text">
-                            <h2 class="color-purple">{{ $total_admins }}</h2>
-                            <h3>{{ __('Total Admin') }}</h3>
-                        </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="status__box status__box__v3 bg-style">
-                        <div class="status__box__img">
-                            <img src="{{ asset('admin') }}/images/admin-dashboard-icons/laptop.png" alt="icon">
+                    <a href="/admin/instructor">
+                        <div class="status__box status__box__v3 bg-style">
+                            <div class="status__box__img">
+                                <img src="{{ asset('admin') }}/images/admin-dashboard-icons/laptop.png" alt="icon">
+                            </div>
+                            <div class="status__box__text">
+                                <h2 class="color-purple">{{ $total_instructors }}</h2>
+                                <h3>{{ __('Total Instructors') }}</h3>
+                            </div>
                         </div>
-                        <div class="status__box__text">
-                            <h2 class="color-purple">{{ $total_instructors }}</h2>
-                            <h3>{{ __('Total Instructors') }}</h3>
-                        </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="status__box status__box__v3 bg-style">
-                        <div class="status__box__img">
-                            <img src="{{ asset('admin') }}/images/admin-dashboard-icons/study.png" alt="icon">
+                    <a href="/admin/student">
+                        <div class="status__box status__box__v3 bg-style">
+                            <div class="status__box__img">
+                                <img src="{{ asset('admin') }}/images/admin-dashboard-icons/study.png" alt="icon">
+                            </div>
+                            <div class="status__box__text">
+                                <h2 class="color-blue">{{ $total_students }}</h2>
+                                <h3>{{ __('Total Students') }}</h3>
+                            </div>
                         </div>
-                        <div class="status__box__text">
-                            <h2 class="color-blue">{{ $total_students }}</h2>
-                            <h3>{{ __('Total Students') }}</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="status__box status__box__v3 bg-style">
-                        <div class="status__box__img">
-                            <img src="{{ asset('admin') }}/images/admin-dashboard-icons/test.png" alt="icon">
-                        </div>
-                        <div class="status__box__text">
-                            <h2 class="color-green">{{ $total_courses }}</h2>
-                            <h3>{{ __('Total Courses') }}</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="status__box status__box__v3 bg-style">
-
-                        <div class="status__box__img">
-                            <img src="{{ asset('admin') }}/images/admin-dashboard-icons/test-1.png" alt="icon">
-                        </div>
-                        <div class="status__box__text">
-                            <h2 class="color-blue">{{ $total_active_courses }}</h2>
-                            <h3>{{ __('Active Courses') }}</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="status__box status__box__v3 bg-style">
-                        <div class="status__box__img">
-                            <img src="{{ asset('admin') }}/images/admin-dashboard-icons/download.png" alt="icon">
-                        </div>
-                        <div class="status__box__text">
-                            <h2 class="color-purple">{{ $total_pending_courses }}</h2>
-                            <h3>{{ __('Pending Courses') }}</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="status__box status__box__v3 bg-style">
-                        <div class="status__box__img">
-                            <img src="{{ asset('admin') }}/images/admin-dashboard-icons/withdraw.png" alt="icon">
-                        </div>
-                        <div class="status__box__text">
-                            <h2 class="color-purple">{{ $total_free_courses }}</h2>
-                            <h3>{{ __('Free Courses') }}</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="status__box status__box__v3 bg-style">
-                        <div class="status__box__img">
-                            <img src="{{ asset('admin') }}/images/admin-dashboard-icons/elearning.png" alt="icon">
-                        </div>
-                        <div class="status__box__text">
-                            <h2 class="color-green">{{ $total_paid_courses }}</h2>
-                            <h3>{{ __('Paid Courses') }}</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="status__box status__box__v3 bg-style">
-                        <div class="status__box__img">
-                            <img src="{{ asset('admin') }}/images/admin-dashboard-icons/checklist.png" alt="icon">
-                        </div>
-                        <div class="status__box__text">
-                            <h2 class="color-red">{{ $total_lessons }}</h2>
-                            <h3>{{ __('Total Lessons') }}</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="status__box status__box__v3 bg-style">
-                        <div class="status__box__img">
-                            <img src="{{ asset('admin') }}/images/admin-dashboard-icons/website.png" alt="icon">
-                        </div>
-                        <div class="status__box__text">
-                            <h2 class="color-red">{{ $total_lectures }}</h2>
-                            <h3>{{ __('Total Lectures') }}</h3>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="status__box status__box__v3 bg-style">
-                        <div class="status__box__img">
-                            <img src="{{ asset('admin') }}/images/admin-dashboard-icons/blogger.png" alt="icon">
+                    <a href="/admin/course">
+                        <div class="status__box status__box__v3 bg-style">
+                            <div class="status__box__img">
+                                <img src="{{ asset('admin') }}/images/admin-dashboard-icons/test.png" alt="icon">
+                            </div>
+                            <div class="status__box__text">
+                                <h2 class="color-green">{{ $total_courses }}</h2>
+                                <h3>{{ __('Total Courses') }}</h3>
+                            </div>
                         </div>
-                        <div class="status__box__text">
-                            <h2 class="color-yellow">{{ $total_blogs }}</h2>
-                            <h3>{{ __('Total Blogs') }}</h3>
-                        </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="status__box status__box__v3 bg-style">
-                        <div class="status__box__img">
-                            <img src="{{ asset('admin') }}/images/admin-dashboard-icons/save-money.png" alt="icon">
-                        </div>
-                        <div class="status__box__text">
-                            <h2 class="color-green">
+                    <a href="/admin/course/approved">
+                        <div class="status__box status__box__v3 bg-style">
 
-                                @if(get_currency_placement() == 'after')
-                                    {{ $total_paid_sales }} {{ get_currency_symbol() }}
-                                @else
-                                    {{ get_currency_symbol() }} {{ $total_paid_sales }}
-                                @endif
-                            </h2>
-                            <h3>{{ __('Total Paid Sales') }}</h3>
+                            <div class="status__box__img">
+                                <img src="{{ asset('admin') }}/images/admin-dashboard-icons/test-1.png" alt="icon">
+                            </div>
+                            <div class="status__box__text">
+                                <h2 class="color-blue">{{ $total_active_courses }}</h2>
+                                <h3>{{ __('Active Courses') }}</h3>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="status__box status__box__v3 bg-style">
-                        <div class="status__box__img">
-                            <img src="{{ asset('admin') }}/images/admin-dashboard-icons/paying.png" alt="icon">
+                    <a href="/admin/course/review-pending">
+                        <div class="status__box status__box__v3 bg-style">
+                            <div class="status__box__img">
+                                <img src="{{ asset('admin') }}/images/admin-dashboard-icons/download.png" alt="icon">
+                            </div>
+                            <div class="status__box__text">
+                                <h2 class="color-purple">{{ $total_pending_courses }}</h2>
+                                <h3>{{ __('Pending Courses') }}</h3>
+                            </div>
                         </div>
-                        <div class="status__box__text">
-                            <h2 class="color-red">{{ $total_free_sales }}</h2>
-                            <h3>{{ __('Total Free Sales') }}</h3>
-                        </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="status__box status__box__v3 bg-style">
-                        <div class="status__box__img">
-                            <img src="images/admin-dashboard-icons/commission-1.png" alt="icon">
+                    <a href="/admin/course">
+                        <div class="status__box status__box__v3 bg-style">
+                            <div class="status__box__img">
+                                <img src="{{ asset('admin') }}/images/admin-dashboard-icons/withdraw.png" alt="icon">
+                            </div>
+                            <div class="status__box__text">
+                                <h2 class="color-purple">{{ $total_free_courses }}</h2>
+                                <h3>{{ __('Free Courses') }}</h3>
+                            </div>
                         </div>
-                        <div class="status__box__text">
-                            <h2 class="color-purple">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <a href="/admin/course">
+                        <div class="status__box status__box__v3 bg-style">
+                            <div class="status__box__img">
+                                <img src="{{ asset('admin') }}/images/admin-dashboard-icons/elearning.png" alt="icon">
+                            </div>
+                            <div class="status__box__text">
+                                <h2 class="color-green">{{ $total_paid_courses }}</h2>
+                                <h3>{{ __('Paid Courses') }}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <a href="/admin/course">
+                        <div class="status__box status__box__v3 bg-style">
+                            <div class="status__box__img">
+                                <img src="{{ asset('admin') }}/images/admin-dashboard-icons/checklist.png" alt="icon">
+                            </div>
+                            <div class="status__box__text">
+                                <h2 class="color-red">{{ $total_lessons }}</h2>
+                                <h3>{{ __('Total Lessons') }}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <a href="/admin/course">
+                        <div class="status__box status__box__v3 bg-style">
+                            <div class="status__box__img">
+                                <img src="{{ asset('admin') }}/images/admin-dashboard-icons/website.png" alt="icon">
+                            </div>
+                            <div class="status__box__text">
+                                <h2 class="color-red">{{ $total_lectures }}</h2>
+                                <h3>{{ __('Total Lectures') }}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
 
-                                @if(get_currency_placement() == 'after')
-                                    {{ $total_platform_charge }} {{ get_currency_symbol() }}
-                                @else
-                                    {{ get_currency_symbol() }} {{ $total_platform_charge }}
-                                @endif
-                            </h2>
-                            <h3>{{ __('Total Platform Charge') }}</h3>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <a href="/admin/blog">
+                        <div class="status__box status__box__v3 bg-style">
+                            <div class="status__box__img">
+                                <img src="{{ asset('admin') }}/images/admin-dashboard-icons/blogger.png" alt="icon">
+                            </div>
+                            <div class="status__box__text">
+                                <h2 class="color-yellow">{{ $total_blogs }}</h2>
+                                <h3>{{ __('Total Blogs') }}</h3>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="status__box status__box__v3 bg-style">
-                        <div class="status__box__img">
-                            <img src="images/admin-dashboard-icons/money-loss.png" alt="icon">
-                        </div>
-                        <div class="status__box__text">
-                            <h2 class="color-blue">
-                                @if(get_currency_placement() == 'after')
-                                    {{ $total_platform_charge_this_month }} {{ get_currency_symbol() }}
-                                @else
-                                    {{ get_currency_symbol() }} {{ $total_platform_charge_this_month }}
-                                @endif
+                    <a href="/admin/report/course-revenue-report">
+                        <div class="status__box status__box__v3 bg-style">
+                            <div class="status__box__img">
+                                <img src="{{ asset('admin') }}/images/admin-dashboard-icons/save-money.png" alt="icon">
+                            </div>
+                            <div class="status__box__text">
+                                <h2 class="color-green">
 
-                            </h2>
-                            <h3>{{ __('Total Platform Charge (Current Month)') }}</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="status__box status__box__v3 bg-style">
-                        <div class="status__box__img">
-                            <img src="{{ asset('admin') }}/images/admin-dashboard-icons/discount.png" alt="icon">
-                        </div>
-                        <div class="status__box__text">
-                            <h2 class="color-purple">
-                                @if(get_currency_placement() == 'after')
-                                    {{ $total_admin_commission }} {{ get_currency_symbol() }}
-                                @else
-                                    {{ get_currency_symbol() }} {{ $total_admin_commission }}
-                                @endif
-
-                            </h2>
-                            <h3>{{ __('Total Sell Commission') }}</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="status__box status__box__v3 bg-style">
-                        <div class="status__box__img">
-                            <img src="{{ asset('admin') }}/images/admin-dashboard-icons/shop.png" alt="icon">
-                        </div>
-                        <div class="status__box__text">
-                            <h2 class="color-red">
-                                @if(get_currency_placement() == 'after')
-                                    {{ $total_admin_commission_this_month }} {{ get_currency_symbol() }}
-                                @else
-                                    {{ get_currency_symbol() }} {{ $total_admin_commission_this_month }}
-                                @endif</h2>
-                            <h3>{{ __('Total Sell Commission (Current Month)') }}</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="status__box status__box__v3 bg-style">
-                        <div class="status__box__img">
-                            <img src="{{ asset('admin') }}/images/admin-dashboard-icons/money.png" alt="icon">
-                        </div>
-                        <div class="status__box__text">
-                            <h2 class="color-blue"> @if(get_currency_placement() == 'after')
-                                    {{ $total_revenue }} {{ get_currency_symbol() }}
-                                @else
-                                    {{ get_currency_symbol() }} {{ $total_revenue }}
-                                @endif</h2>
-                            <h3>{{ __('Total Revenue') }}</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="status__box status__box__v3 bg-style">
-                        <div class="status__box__img">
-                            <img src="{{ asset('admin') }}/images/admin-dashboard-icons/economy.png" alt="icon">
-                        </div>
-                        <div class="status__box__text">
-                            <h2 class="color-yellow">
-                                @if(get_currency_placement() == 'after')
-                                    {{ $total_new_withdraws }} {{ get_currency_symbol() }}
-                                @else
-                                    {{ get_currency_symbol() }} {{ $total_new_withdraws }}
-                                @endif
+                                    @if(get_currency_placement() == 'after')
+                                        {{ $total_paid_sales }} {{ get_currency_symbol() }}
+                                    @else
+                                        {{ get_currency_symbol() }} {{ $total_paid_sales }}
+                                    @endif
                                 </h2>
-                            <h3>{{ __('Total Request Withdraw') }}</h3>
+                                <h3>{{ __('Total Paid Sales') }}</h3>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="status__box status__box__v3 bg-style">
-                        <div class="status__box__img">
-                            <img src="{{ asset('admin') }}/images/admin-dashboard-icons/save-money.png" alt="icon">
+                    <a href="/admin/report/course-revenue-report">
+                        <div class="status__box status__box__v3 bg-style">
+                            <div class="status__box__img">
+                                <img src="{{ asset('admin') }}/images/admin-dashboard-icons/paying.png" alt="icon">
+                            </div>
+                            <div class="status__box__text">
+                                <h2 class="color-red">{{ $total_free_sales }}</h2>
+                                <h3>{{ __('Total Free Sales') }}</h3>
+                            </div>
                         </div>
-                        <div class="status__box__text">
-                            <h2 class="color-green"> @if(get_currency_placement() == 'after')
-                                    {{ $total_complete_withdraws }} {{ get_currency_symbol() }}
-                                @else
-                                    {{ get_currency_symbol() }} {{ $total_complete_withdraws }}
-                                @endif</h2>
-                            <h3>{{ __('Total Complete Withdraw') }}</h3>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <a href="/admin/report/course-revenue-report">
+                        <div class="status__box status__box__v3 bg-style">
+                            <div class="status__box__img">
+                                <img src="images/admin-dashboard-icons/commission-1.png" alt="icon">
+                            </div>
+                            <div class="status__box__text">
+                                <h2 class="color-purple">
+
+                                    @if(get_currency_placement() == 'after')
+                                        {{ $total_platform_charge }} {{ get_currency_symbol() }}
+                                    @else
+                                        {{ get_currency_symbol() }} {{ $total_platform_charge }}
+                                    @endif
+                                </h2>
+                                <h3>{{ __('Total Platform Charge') }}</h3>
+                            </div>
                         </div>
-                    </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <a href="/admin/report/course-revenue-report">
+                        <div class="status__box status__box__v3 bg-style">
+                            <div class="status__box__img">
+                                <img src="images/admin-dashboard-icons/money-loss.png" alt="icon">
+                            </div>
+                            <div class="status__box__text">
+                                <h2 class="color-blue">
+                                    @if(get_currency_placement() == 'after')
+                                        {{ $total_platform_charge_this_month }} {{ get_currency_symbol() }}
+                                    @else
+                                        {{ get_currency_symbol() }} {{ $total_platform_charge_this_month }}
+                                    @endif
+
+                                </h2>
+                                <h3>{{ __('Total Platform Charge (Current Month)') }}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <a? href="/admin/report/course-revenue-report">
+                        <div class="status__box status__box__v3 bg-style">
+                            <div class="status__box__img">
+                                <img src="{{ asset('admin') }}/images/admin-dashboard-icons/discount.png" alt="icon">
+                            </div>
+                            <div class="status__box__text">
+                                <h2 class="color-purple">
+                                    @if(get_currency_placement() == 'after')
+                                        {{ $total_admin_commission }} {{ get_currency_symbol() }}
+                                    @else
+                                        {{ get_currency_symbol() }} {{ $total_admin_commission }}
+                                    @endif
+
+                                </h2>
+                                <h3>{{ __('Total Sell Commission') }}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <a href="/admin/report/course-revenue-report">
+                        <div class="status__box status__box__v3 bg-style">
+                            <div class="status__box__img">
+                                <img src="{{ asset('admin') }}/images/admin-dashboard-icons/shop.png" alt="icon">
+                            </div>
+                            <div class="status__box__text">
+                                <h2 class="color-red">
+                                    @if(get_currency_placement() == 'after')
+                                        {{ $total_admin_commission_this_month }} {{ get_currency_symbol() }}
+                                    @else
+                                        {{ get_currency_symbol() }} {{ $total_admin_commission_this_month }}
+                                    @endif</h2>
+                                <h3>{{ __('Total Sell Commission (Current Month)') }}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <a href="/admin/report/course-revenue-report">
+                        <div class="status__box status__box__v3 bg-style">
+                            <div class="status__box__img">
+                                <img src="{{ asset('admin') }}/images/admin-dashboard-icons/money.png" alt="icon">
+                            </div>
+                            <div class="status__box__text">
+                                <h2 class="color-blue"> @if(get_currency_placement() == 'after')
+                                        {{ $total_revenue }} {{ get_currency_symbol() }}
+                                    @else
+                                        {{ get_currency_symbol() }} {{ $total_revenue }}
+                                    @endif</h2>
+                                <h3>{{ __('Total Revenue') }}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <a href="/admin/payout/new-withdraw">
+                        <div class="status__box status__box__v3 bg-style">
+                            <div class="status__box__img">
+                                <img src="{{ asset('admin') }}/images/admin-dashboard-icons/economy.png" alt="icon">
+                            </div>
+                            <div class="status__box__text">
+                                <h2 class="color-yellow">
+                                    @if(get_currency_placement() == 'after')
+                                        {{ $total_new_withdraws }} {{ get_currency_symbol() }}
+                                    @else
+                                        {{ get_currency_symbol() }} {{ $total_new_withdraws }}
+                                    @endif
+                                    </h2>
+                                <h3>{{ __('Total Request Withdraw') }}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <a href="/admin/payout/complete-withdraw">
+                        <div class="status__box status__box__v3 bg-style">
+                            <div class="status__box__img">
+                                <img src="{{ asset('admin') }}/images/admin-dashboard-icons/save-money.png" alt="icon">
+                            </div>
+                            <div class="status__box__text">
+                                <h2 class="color-green"> @if(get_currency_placement() == 'after')
+                                        {{ $total_complete_withdraws }} {{ get_currency_symbol() }}
+                                    @else
+                                        {{ get_currency_symbol() }} {{ $total_complete_withdraws }}
+                                    @endif</h2>
+                                <h3>{{ __('Total Complete Withdraw') }}</h3>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
 

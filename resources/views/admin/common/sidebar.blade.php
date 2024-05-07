@@ -1162,14 +1162,14 @@
             </ul>
         </li>
         @endif
-        @can('manage_version_update')
+        {{-- @can('manage_version_update')
             <li class="{{ @$subNavVersionUpdateActiveClass }}">
                 <a href="{{ route('settings.file-version-update') }}">
                     <i class="fa fa-circle"></i>
                     <span>{{__('Version Update')}}</span>
                 </a>
             </li>
-        @endif
+        @endif --}}
 
         <li class="mb-5 text-center">
             <a href="#">
